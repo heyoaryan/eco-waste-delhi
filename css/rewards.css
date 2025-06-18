@@ -1,0 +1,2001 @@
+/* Enhanced Rewards Page Styles */
+:root {
+    --primary-color: #2e7d32;
+    --secondary-color: #1b5e20;
+    --text-color: #333;
+    --bg-color: #f5f7fa;
+    --card-bg: #ffffff;
+    --gradient-primary: linear-gradient(135deg, #2e7d32, #1b5e20);
+    --gradient-secondary: linear-gradient(135deg, #43a047, #2e7d32);
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Navbar Styles */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    padding: 1rem 5%;
+    transition: all 0.3s ease;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar.scrolled {
+    padding: 0.8rem 5%;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-brand i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.nav-brand:hover i {
+    transform: rotate(15deg);
+}
+
+.nav-brand h1 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link.active::after {
+    width: 80%;
+}
+
+/* Language Switcher */
+.language-switcher {
+    position: relative;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    min-width: 150px;
+    display: none;
+    overflow: hidden;
+}
+
+.language-switcher:hover .language-dropdown {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.language-dropdown a {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.language-dropdown a:hover {
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.language-dropdown a.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Profile Menu */
+.profile-menu {
+    position: relative;
+}
+
+.profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.profile-btn:hover {
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.profile-avatar {
+    width: 35px;
+    height: 35px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.profile-name {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    min-width: 250px;
+    padding: 1rem;
+    display: none;
+    z-index: 1000;
+}
+
+.profile-dropdown.show {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.dropdown-header {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1rem;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.user-info h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.user-info p {
+    margin: 0.2rem 0 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.dropdown-links {
+    margin-bottom: 1rem;
+}
+
+.dropdown-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-link:hover {
+    background: rgba(76, 175, 80, 0.1);
+    transform: translateX(5px);
+}
+
+.link-icon {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.link-content {
+    flex: 1;
+}
+
+.link-title {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.link-desc {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+@media (max-width: 992px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        padding: 2rem;
+        flex-direction: column;
+        gap: 1rem;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+    }
+
+    .language-switcher {
+        margin-left: 0;
+    }
+
+    .profile-dropdown {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        animation: slideUpMobile 0.4s ease-out;
+    }
+
+    @keyframes slideUpMobile {
+        0% { transform: translateY(100%); }
+        100% { transform: translateY(0); }
+    }
+}
+
+.rewards-container {
+    padding: 2rem 5%;
+    margin-top: 80px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* User Progress Section */
+.user-progress {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin: 80px auto 2rem;
+    max-width: 1400px;
+    width: 90%;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.progress-title h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.progress-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.progress-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.stat-item {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-item i {
+    font-size: 2rem;
+    color: #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.stat-info {
+    flex-grow: 1;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.progress-bar-container {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+}
+
+.level-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.current-level, .next-level {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.progress-bar {
+    height: 12px;
+    background: #e9ecef;
+    border-radius: 10px;
+    position: relative;
+    margin: 2rem 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+
+.progress-markers {
+    position: relative;
+    height: 0;
+}
+
+.marker {
+    position: absolute;
+    top: -25px;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #e9ecef;
+    transition: all 0.3s ease;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.marker i {
+    font-size: 1.2rem;
+    color: #999;
+}
+
+.marker.achieved {
+    border-color: #4CAF50;
+    background: #4CAF50;
+}
+
+.marker.achieved i {
+    color: white;
+}
+
+.marker.current {
+    border-color: #FFC107;
+    background: white;
+}
+
+.marker.current i {
+    color: #FFC107;
+}
+
+.marker-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 0.8rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: max-content;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    z-index: 3;
+}
+
+.marker:hover .marker-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.marker-tooltip strong {
+    display: block;
+    color: #333;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+.marker-tooltip span {
+    display: block;
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.marker-tooltip small {
+    display: block;
+    color: #4CAF50;
+    font-size: 0.75rem;
+    margin-top: 0.2rem;
+}
+
+.points-needed {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .progress-header {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .progress-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-item {
+        padding: 1.2rem;
+    }
+
+    .marker {
+        width: 30px;
+        height: 30px;
+    }
+
+    .marker i {
+        font-size: 1rem;
+    }
+
+    .marker-tooltip {
+        width: 200px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Available Rewards Section */
+.available-rewards {
+    margin-bottom: 3rem;
+}
+
+.section-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.section-desc {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.reward-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.reward-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.reward-card.premium {
+    background: linear-gradient(135deg, #1a237e, #0d47a1);
+    color: white;
+}
+
+.reward-status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.status-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status-badge.unlocked {
+    background: #4CAF50;
+    color: white;
+}
+
+.status-badge.locked {
+    background: #ff5722;
+    color: white;
+}
+
+.points-required {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.reward-card.premium .points-required {
+    color: rgba(255,255,255,0.8);
+}
+
+.reward-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.reward-card.premium .reward-icon {
+    background: rgba(255,255,255,0.1);
+}
+
+.reward-icon i {
+    font-size: 1.8rem;
+    color: #4CAF50;
+}
+
+.reward-card.premium .reward-icon i {
+    color: white;
+}
+
+.reward-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.reward-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.reward-card.premium p {
+    color: rgba(255,255,255,0.8);
+}
+
+.claim-btn {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #4CAF50;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.claim-btn:hover:not(:disabled) {
+    background: #43A047;
+    transform: translateY(-2px);
+}
+
+.claim-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.reward-card.premium .claim-btn {
+    background: #FFC107;
+    color: #333;
+}
+
+.reward-card.premium .claim-btn:hover:not(:disabled) {
+    background: #FFB300;
+}
+
+/* Monthly Challenges Section */
+.monthly-challenges {
+    margin-bottom: 3rem;
+}
+
+.challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.challenge-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.challenge-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.challenge-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.challenge-icon i {
+    font-size: 1.8rem;
+    color: #4CAF50;
+}
+
+.challenge-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.challenge-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.challenge-progress {
+    margin-bottom: 1.5rem;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #4CAF50;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.challenge-reward {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4CAF50;
+    font-weight: 500;
+}
+
+.challenge-reward i {
+    color: #FFC107;
+}
+
+/* Special Events Section */
+.special-events {
+    margin-bottom: 3rem;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.event-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.event-banner {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.event-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.event-status.upcoming {
+    background: #FFC107;
+    color: #333;
+}
+
+.event-content {
+    padding: 2rem;
+}
+
+.event-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.event-date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.event-rewards {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.reward-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 20px;
+}
+
+.reward-item i {
+    color: #FFC107;
+}
+
+.event-btn {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #4CAF50;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.event-btn:hover {
+    background: #43A047;
+    transform: translateY(-2px);
+}
+
+/* Reward Claim Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.reward-details {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.reward-icon.large {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+}
+
+.claim-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.claim-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.claim-form input,
+.claim-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.claim-submit-btn {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #4CAF50;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.claim-submit-btn:hover {
+    background: #43A047;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .rewards-grid,
+    .challenges-grid,
+    .events-grid {
+        grid-template-columns: 1fr;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .reward-card,
+    .challenge-card,
+    .event-card {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .modal-content {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .user-progress {
+        margin: 70px 0 0 0;
+        padding: 1rem;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .announcement-banner {
+        margin: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .points-ticker {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .ticker-item {
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .featured-reward {
+        margin: 0;
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .community-impact {
+        margin: 0;
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .brand-partners-grid {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .brand-card {
+        border-radius: 0;
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .milestone-track {
+        padding: 1rem 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .milestone {
+        margin: 0 0.25rem;
+    }
+
+    .points-value {
+        font-size: 1.8rem;
+    }
+
+    .method {
+        padding: 1rem;
+        margin: 0;
+        border-radius: 0;
+    }
+}
+
+.points-display {
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.95), rgba(27, 94, 32, 0.95));
+    border-radius: 15px;
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    width: fit-content;
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.points-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: starPulse 2s infinite;
+}
+
+@keyframes starPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.points {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+    display: block;
+    margin-top: 0.2rem;
+}
+
+@media (max-width: 768px) {
+    .points-display {
+        padding: 1.2rem 1.5rem;
+    }
+
+    .points-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .points-icon i {
+        font-size: 1.2rem;
+    }
+
+    .points {
+        font-size: 1.8rem;
+    }
+
+    .label {
+        font-size: 0.9rem;
+    }
+}
+
+/* Modern Announcement Banner Styles */
+.announcement-banner {
+    background: white;
+    color: var(--text-color);
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    margin: 0 auto 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    max-width: 1400px;
+    width: 90%;
+    border-radius: 20px;
+}
+
+.announcement-wrapper {
+    position: relative;
+    padding: 1.2rem 0;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    width: 100%;
+}
+
+.announcement-wrapper.primary {
+    background: rgba(46, 125, 50, 0.03);
+}
+
+.announcement-wrapper.secondary {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.announcement-slider {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    padding: 0 2rem;
+    position: relative;
+    width: fit-content;
+}
+
+.announcement-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 1.5rem;
+    background: rgba(46, 125, 50, 0.05);
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    white-space: nowrap;
+    margin-right: 1rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(46, 125, 50, 0.1);
+}
+
+.announcement-item:hover {
+    transform: translateY(-2px);
+    background: rgba(46, 125, 50, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.announcement-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.announcement-icon i {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.announcement-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.announcement-text strong {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.announcement-text span {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+/* Hide scrollbars */
+.announcement-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* Primary slider (moving left to right) */
+.announcement-wrapper.primary .announcement-slider {
+    animation: slideLeft 40s linear infinite;
+}
+
+/* Secondary slider (moving right to left) */
+.announcement-wrapper.secondary .announcement-slider {
+    animation: slideRight 40s linear infinite;
+}
+
+/* Animation keyframes for opposite directions */
+@keyframes slideLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 1rem)); }
+}
+
+@keyframes slideRight {
+    0% { transform: translateX(calc(-50% - 1rem)); }
+    100% { transform: translateX(0); }
+}
+
+/* Pause animation on hover */
+.announcement-slider:hover {
+    animation-play-state: paused;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .announcement-banner {
+        margin-bottom: 1.5rem;
+    }
+
+    .announcement-wrapper {
+        padding: 0.8rem 0;
+    }
+
+    .announcement-slider {
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+
+    .announcement-item {
+        padding: 0.4rem 1rem;
+        margin-right: 0.8rem;
+    }
+
+    .announcement-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .announcement-icon i {
+        font-size: 1rem;
+    }
+
+    .announcement-text strong {
+        font-size: 0.75rem;
+    }
+
+    .announcement-text span {
+        font-size: 0.9rem;
+    }
+}
+
+/* Points Ticker Styles */
+.points-ticker {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+    margin: 1.5rem auto;
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    max-width: 1200px;
+    gap: 1rem;
+    animation: slideInUp 0.5s ease;
+}
+
+.ticker-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.ticker-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.ticker-item.highlight {
+    background: linear-gradient(135deg, #ff9800, #f57c00);
+    color: white;
+}
+
+.ticker-item.success {
+    background: linear-gradient(135deg, #4caf50, #43a047);
+    color: white;
+}
+
+.ticker-item.info {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    color: white;
+}
+
+.ticker-item.warning {
+    background: linear-gradient(135deg, #ff5722, #f4511e);
+    color: white;
+}
+
+.ticker-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.ticker-title {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.ticker-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.ticker-item i {
+    font-size: 1.8rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    padding: 0.8rem;
+}
+
+/* Enhanced Icon Animations */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+.sparkle {
+    animation: sparkle 3s infinite;
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+.shake {
+    animation: shake 3s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes sparkle {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(180deg); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Responsive Styles for Enhanced Elements */
+@media (max-width: 992px) {
+    .points-ticker {
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
+
+    .ticker-item {
+        flex: 1 1 calc(50% - 1rem);
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .marquee-wrapper {
+        padding: 0.6rem 0;
+    }
+
+    .marquee-item {
+        padding: 0 1.5rem;
+    }
+
+    .marquee-item span {
+        font-size: 0.9rem;
+    }
+
+    .points-ticker {
+        flex-direction: column;
+    }
+
+    .ticker-item {
+        flex: 1 1 100%;
+    }
+
+    .ticker-item i {
+        font-size: 1.5rem;
+        width: 35px;
+        height: 35px;
+    }
+
+    .ticker-value {
+    font-size: 1rem;
+    }
+}
+
+/* Featured Reward Styles */
+.featured-reward {
+    background: linear-gradient(135deg, #1a237e, #0d47a1);
+    border-radius: 15px;
+    margin: 2rem auto;
+    padding: 2rem;
+    color: white;
+    max-width: 1200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-badge {
+    position: absolute;
+    top: 1rem;
+    right: -2rem;
+    background: #ffd700;
+    color: #000;
+    padding: 0.5rem 3rem;
+    transform: rotate(45deg);
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.featured-details {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 2rem;
+    }
+
+.featured-details img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    animation: float 3s ease-in-out infinite;
+    }
+
+.featured-info {
+    flex: 1;
+    }
+
+.featured-btn {
+    background: #ffd700;
+    color: #000;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+        gap: 0.8rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: 1.5rem;
+    }
+
+.featured-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Community Impact Styles */
+.community-impact {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.impact-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+    }
+
+.impact-item {
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.impact-item:hover {
+    transform: translateY(-5px);
+}
+
+.impact-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    }
+
+.impact-item h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin: 1rem 0;
+}
+
+/* Brand Slider Styles */
+.brand-slider {
+    background: white;
+    padding: 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.brand-slide-track {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    width: calc(250px * 14);
+    }
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-250px * 7)); }
+}
+
+/* Animation Keyframes */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Floating Animation for Icons */
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .featured-details {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .featured-details img {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .impact-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .points-ticker {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .ticker-item {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 0.8rem 0;
+    }
+
+    .ticker-item:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Enhanced Card Hover Effects */
+.reward-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reward-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .user-progress {
+        margin-top: 70px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .announcement-banner {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Brand Partners Section */
+.brand-rewards {
+    padding: 3rem 0;
+    background: linear-gradient(to bottom, rgba(46, 125, 50, 0.05), transparent);
+    margin: 2rem auto;
+    max-width: 1400px;
+    width: 90%;
+}
+
+.brand-partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.brand-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.brand-header {
+    position: relative;
+    padding: 1.5rem;
+    background: linear-gradient(45deg, rgba(46,125,50,0.03), rgba(46,125,50,0.08));
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.brand-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(46,125,50,0.2);
+}
+
+.brand-logo {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo img {
+    max-height: 100%;
+    max-width: 140px;
+    object-fit: contain;
+}
+
+.brand-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-content h3 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.brand-content p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.brand-progress {
+    margin-bottom: 1.5rem;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.progress-label {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.progress-value {
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.brand-progress .progress-bar {
+    height: 8px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.brand-progress .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 4px;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-btn {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 12px;
+    background: var(--primary-color);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: auto;
+}
+
+.brand-btn i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.brand-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.brand-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .brand-partners-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .brand-card {
+        max-width: 100%;
+    }
+
+    .brand-header {
+        padding: 1.2rem;
+    }
+
+    .brand-logo {
+        height: 40px;
+    }
+
+    .brand-content {
+        padding: 1.2rem;
+    }
+
+    .brand-btn {
+        padding: 0.8rem;
+    }
+}
+
+/* Animation for progress bars */
+@keyframes fillProgress {
+    from { width: 0; }
+    to { width: var(--progress-width); }
+}
+
+.progress-fill {
+    animation: fillProgress 1.5s ease-out forwards;
+}
+
+@media (max-width: 768px) {
+    .rewards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .reward-card {
+        margin: 0;
+    }
+
+    .milestone-track {
+        padding: 2rem 1rem;
+    }
+
+    .milestone {
+        width: 60px;
+        height: 60px;
+    }
+
+    .milestone i {
+        font-size: 1.5rem;
+    }
+
+    .milestone span {
+        font-size: 0.8rem;
+    }
+
+    .points-section {
+        padding: 2rem 1rem;
+    }
+
+    .points-value {
+        font-size: 2.5rem;
+    }
+
+    .earning-methods {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .method {
+        padding: 1.2rem;
+    }
+
+    .method i {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .milestone-track {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 1.5rem 0.5rem;
+    }
+
+    .milestone {
+        flex-shrink: 0;
+        margin: 0 0.5rem;
+    }
+
+    .points-value {
+        font-size: 2rem;
+    }
+
+    .method {
+        padding: 1rem;
+    }
+}

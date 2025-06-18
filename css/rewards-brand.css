@@ -1,0 +1,202 @@
+/* Brand Rewards Section Styles */
+.brand-rewards {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.brand-rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.brand-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.brand-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.brand-logo {
+    height: 60px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-logo img {
+    max-height: 100%;
+    max-width: 150px;
+    object-fit: contain;
+}
+
+.brand-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.brand-content h3 {
+    font-size: 1.5rem;
+    color: #2C3E50;
+    margin-bottom: 0.5rem;
+}
+
+.brand-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.progress-container {
+    margin-top: auto;
+    margin-bottom: 1.5rem;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 4px;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.3) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.brand-card .claim-btn {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.brand-card .claim-btn:not([disabled]):hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.brand-card .claim-btn[disabled] {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.brand-card .claim-btn i {
+    font-size: 1.1rem;
+}
+
+/* Animation for progress bars */
+.brand-card[data-aos="fade-up"] .progress-fill {
+    width: 0 !important;
+    transition: none;
+}
+
+.brand-card[data-aos="fade-up"].aos-animate .progress-fill {
+    width: var(--progress-width) !important;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .brand-rewards-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .brand-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Add animation for the cards */
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.brand-card {
+    animation: cardEntrance 0.8s ease-out;
+    animation-fill-mode: backwards;
+}
+
+.brand-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.brand-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.brand-card:nth-child(3) {
+    animation-delay: 0.3s;
+} 

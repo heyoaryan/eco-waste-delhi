@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rewards - Zero Waste Delhi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/rewards.css">
+    <link rel="stylesheet" href="css/rewards-animations.css">
+    <link rel="stylesheet" href="css/rewards-brand.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <!-- Same Navigation as dashboard.html -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-leaf"></i>
+            <h1>Zero Waste Delhi</h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="dashboard.html" class="nav-link">
+                <i class="fas fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-link active">
+                <i class="fas fa-gift"></i>
+                <span>Rewards</span>
+            </a>
+        </div>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- User Progress Section with enhanced animations -->
+    <section class="user-progress animate__animated animate__fadeIn">
+        <div class="progress-header">
+            <div class="progress-title">
+                <h2>Your Progress</h2>
+                <p class="progress-subtitle">Keep going! You're making a difference.</p>
+            </div>
+            <div class="points-display">
+                <div class="points-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="points-info">
+                    <span class="points">1,250</span>
+                    <span class="label">Points Earned</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-stats">
+            <div class="stat-item">
+                <i class="fas fa-recycle"></i>
+                <div class="stat-info">
+                    <span class="stat-value">125</span>
+                    <span class="stat-label">Items Recycled</span>
+                </div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-tree"></i>
+                <div class="stat-info">
+                    <span class="stat-value">12</span>
+                    <span class="stat-label">Trees Saved</span>
+                </div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-medal"></i>
+                <div class="stat-info">
+                    <span class="stat-value">5</span>
+                    <span class="stat-label">Badges Earned</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Announcement Banner -->
+    <div class="announcement-banner">
+        <div class="announcement-wrapper primary">
+            <div class="announcement-slider">
+                <div class="announcement-item">
+                    <div class="announcement-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="announcement-text">
+                        <strong>Weekend Special</strong>
+                        <span>Double Points on All Recycling Activities</span>
+                    </div>
+                </div>
+                <div class="announcement-item">
+                    <div class="announcement-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div class="announcement-text">
+                        <strong>New Rewards</strong>
+                        <span>Premium Sustainable Products Now Available</span>
+                    </div>
+                </div>
+                <div class="announcement-item">
+                    <div class="announcement-icon">
+                        <i class="fas fa-earth-asia"></i>
+                    </div>
+                    <div class="announcement-text">
+                        <strong>Community Goal</strong>
+                        <span>Help Delhi Reach 1 Million Recycled Items</span>
+                    </div>
+                </div>
+                <div class="announcement-item">
+                    <div class="announcement-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <div class="announcement-text">
+                        <strong>Achievement</strong>
+                        <span>5000 Trees Saved Last Month</span>
+                    </div>
+                </div>
+                <div class="announcement-item">
+                    <div class="announcement-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="announcement-text">
+                        <strong>Weekend Special</strong>
+                        <span>Double Points on All Recycling Activities</span>
+                    </div>
+                </div>
+                <div class="announcement-item">
+                    <div class="announcement-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div class="announcement-text">
+                        <strong>New Rewards</strong>
+                        <span>Premium Sustainable Products Now Available</span>
+                    </div>
+                </div>
+                <div class="announcement-item">
+                    <div class="announcement-icon">
+                        <i class="fas fa-earth-asia"></i>
+                    </div>
+                    <div class="announcement-text">
+                        <strong>Community Goal</strong>
+                        <span>Help Delhi Reach 1 Million Recycled Items</span>
+                    </div>
+                </div>
+                <div class="announcement-item">
+                    <div class="announcement-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <div class="announcement-text">
+                        <strong>Achievement</strong>
+                        <span>5000 Trees Saved Last Month</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="announcement-wrapper secondary">
+            <div class="announcement-slider">
+                <div class="announcement-item">
+                    <div class="announcement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="announcement-text">
+                        <strong>Top Performer</strong>
+                        <span>Rahul S. earned 15,000 points this week</span>
+                    </div>
+                </div>
+                <div class="announcement-item">
+                    <div class="announcement-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="announcement-text">
+                        <strong>Limited Time</strong>
+                        <span>50% Extra Points on Plastic Recycling Today</span>
+                    </div>
+                </div>
+                <div class="announcement-item">
+                    <div class="announcement-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="announcement-text">
+                        <strong>Flash Event</strong>
+                        <span>Triple Points on E-waste - Next 3 Hours Only</span>
+                    </div>
+                </div>
+                <div class="announcement-item">
+                    <div class="announcement-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="announcement-text">
+                        <strong>Milestone</strong>
+                        <span>10,000+ Active Recyclers This Month</span>
+                    </div>
+                </div>
+                <div class="announcement-item">
+                    <div class="announcement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="announcement-text">
+                        <strong>Top Performer</strong>
+                        <span>Rahul S. earned 15,000 points this week</span>
+                    </div>
+                </div>
+                <div class="announcement-item">
+                    <div class="announcement-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="announcement-text">
+                        <strong>Limited Time</strong>
+                        <span>50% Extra Points on Plastic Recycling Today</span>
+                    </div>
+                </div>
+                <div class="announcement-item">
+                    <div class="announcement-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="announcement-text">
+                        <strong>Flash Event</strong>
+                        <span>Triple Points on E-waste - Next 3 Hours Only</span>
+                    </div>
+                </div>
+                <div class="announcement-item">
+                    <div class="announcement-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="announcement-text">
+                        <strong>Milestone</strong>
+                        <span>10,000+ Active Recyclers This Month</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Points Ticker -->
+    <div class="points-ticker">
+        <div class="ticker-item highlight">
+            <i class="fas fa-trophy pulse"></i>
+            <div class="ticker-content">
+                <span class="ticker-title">Top Recycler</span>
+                <span class="ticker-value">Rahul S. - 15,000 points</span>
+            </div>
+        </div>
+        <div class="ticker-item success">
+            <i class="fas fa-star sparkle"></i>
+            <div class="ticker-content">
+                <span class="ticker-title">Monthly Goal</span>
+                <span class="ticker-value">75% Complete</span>
+            </div>
+        </div>
+        <div class="ticker-item info">
+            <i class="fas fa-users bounce"></i>
+            <div class="ticker-content">
+                <span class="ticker-title">Active Recyclers</span>
+                <span class="ticker-value">1,234 This Week</span>
+            </div>
+        </div>
+        <div class="ticker-item warning">
+            <i class="fas fa-bolt shake"></i>
+            <div class="ticker-content">
+                <span class="ticker-title">Today's Bonus</span>
+                <span class="ticker-value">2X Points Active!</span>
+            </div>
+        </div>
+    </div>
+
+    <main class="rewards-container">
+        <!-- New Featured Reward Section -->
+        <section class="featured-reward">
+            <div class="featured-content">
+                <div class="featured-badge">
+                    <span>Featured Reward</span>
+                </div>
+                <h2>Limited Time Offer!</h2>
+                <div class="featured-details">
+                    <img src="assets/electric-bike.png" alt="Electric Bike">
+                    <div class="featured-info">
+                        <h3>Win an Electric Bike!</h3>
+                        <p>Contribute to reducing carbon emissions by winning this eco-friendly electric bike. Limited time opportunity!</p>
+                        <div class="featured-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%"></div>
+                            </div>
+                            <span>6,000 / 10,000 points needed</span>
+                        </div>
+                        <button class="featured-btn">
+                            <i class="fas fa-bicycle"></i>
+                            Earn More Points
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Available Rewards Section with floating cards -->
+        <section class="available-rewards animate__animated animate__fadeIn">
+            <div class="section-header">
+                <h2>Available Rewards</h2>
+                <p class="section-desc">Unlock amazing rewards by recycling more waste!</p>
+            </div>
+
+            <div class="rewards-grid">
+                <!-- Eco-friendly Products Reward -->
+                <div class="reward-card" data-points="500">
+                    <div class="reward-status">
+                        <span class="status-badge unlocked">Unlocked!</span>
+                        <span class="points-required">500 Points</span>
+                    </div>
+                    <div class="reward-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Eco-friendly Products</h3>
+                    <p>Get a set of sustainable products including bamboo utensils and reusable bags.</p>
+                    <button class="claim-btn">Claim Reward</button>
+                </div>
+
+                <!-- Discount Coupons -->
+                <div class="reward-card" data-points="1000">
+                    <div class="reward-status">
+                        <span class="status-badge unlocked">Unlocked!</span>
+                        <span class="points-required">1000 Points</span>
+                    </div>
+                    <div class="reward-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <h3>Shopping Discounts</h3>
+                    <p>20% off at eco-friendly stores and sustainable fashion brands.</p>
+                    <button class="claim-btn">Claim Reward</button>
+                </div>
+
+                <!-- Tree Planting -->
+                <div class="reward-card" data-points="1500">
+                    <div class="reward-status">
+                        <span class="status-badge locked">Locked</span>
+                        <span class="points-required">1500 Points</span>
+                    </div>
+                    <div class="reward-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Plant a Tree</h3>
+                    <p>We'll plant a tree in your name and send you the certificate.</p>
+                    <button class="claim-btn" disabled>Earn 250 More Points</button>
+                </div>
+
+                <!-- Smart Home Device -->
+                <div class="reward-card premium" data-points="2000">
+                    <div class="reward-status">
+                        <span class="status-badge locked">Locked</span>
+                        <span class="points-required">2000 Points</span>
+                    </div>
+                    <div class="reward-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Smart Energy Monitor</h3>
+                    <p>Get a smart device to monitor and reduce your home's energy consumption.</p>
+                    <button class="claim-btn" disabled>Earn 750 More Points</button>
+                </div>
+
+                <!-- Electric Vehicle Charging -->
+                <div class="reward-card premium" data-points="3000">
+                    <div class="reward-status">
+                        <span class="status-badge locked">Locked</span>
+                        <span class="points-required">3000 Points</span>
+                    </div>
+                    <div class="reward-icon">
+                        <i class="fas fa-charging-station"></i>
+                    </div>
+                    <h3>EV Charging Credits</h3>
+                    <p>Get free charging credits for your electric vehicle at partner stations.</p>
+                    <button class="claim-btn" disabled>Earn 1750 More Points</button>
+                </div>
+
+                <!-- Solar Panel Discount -->
+                <div class="reward-card premium" data-points="5000">
+                    <div class="reward-status">
+                        <span class="status-badge locked">Locked</span>
+                        <span class="points-required">5000 Points</span>
+                    </div>
+                    <div class="reward-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h3>Solar Panel Discount</h3>
+                    <p>Get 30% off on home solar panel installation from our partners.</p>
+                    <button class="claim-btn" disabled>Earn 3750 More Points</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Brand Partner Section -->
+        <section class="brand-rewards animate__animated animate__fadeIn">
+            <div class="section-header">
+                <h2>Premium Brand Partners</h2>
+                <p class="section-desc">Exclusive rewards from India's top sustainable brands!</p>
+            </div>
+
+            <div class="brand-partners-grid">
+                <!-- Amazon Card -->
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="brand-header">
+                        <div class="brand-logo">
+                            <img src="assets/amazon-logo.svg" alt="Amazon">
+                        </div>
+                        <div class="brand-badge">Premium Partner</div>
+                    </div>
+                    <div class="brand-content">
+                        <h3>Amazon Green</h3>
+                        <p>Get ₹500 voucher for eco-friendly products</p>
+                        <div class="brand-progress">
+                            <div class="progress-info">
+                                <span class="progress-label">Progress</span>
+                                <span class="progress-value">1500/2000 points</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <button class="brand-btn">
+                            <i class="fas fa-gift"></i>
+                            <span>Claim Reward</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Flipkart Card -->
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="brand-header">
+                        <div class="brand-logo">
+                            <img src="assets/flipkart-logo.svg" alt="Flipkart">
+                        </div>
+                        <div class="brand-badge">Gold Partner</div>
+                    </div>
+                    <div class="brand-content">
+                        <h3>Flipkart Sustainable</h3>
+                        <p>20% off on eco-friendly fashion</p>
+                        <div class="brand-progress">
+                            <div class="progress-info">
+                                <span class="progress-label">Progress</span>
+                                <span class="progress-value">900/1500 points</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <button class="brand-btn">
+                            <i class="fas fa-gift"></i>
+                            <span>Claim Reward</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Nykaa Card -->
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="brand-header">
+                        <div class="brand-logo">
+                            <img src="assets/nykaa-logo.svg" alt="Nykaa">
+                        </div>
+                        <div class="brand-badge">Elite Partner</div>
+                    </div>
+                    <div class="brand-content">
+                        <h3>Nykaa Earth</h3>
+                        <p>25% off on sustainable beauty products</p>
+                        <div class="brand-progress">
+                            <div class="progress-info">
+                                <span class="progress-label">Progress</span>
+                                <span class="progress-value">750/1200 points</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 62%"></div>
+                            </div>
+                        </div>
+                        <button class="brand-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>Earn More</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Community Impact Section -->
+        <section class="community-impact">
+            <h2>Our Community Impact</h2>
+            <div class="impact-stats">
+                <div class="impact-item">
+                    <i class="fas fa-recycle floating"></i>
+                    <h3>50,000+</h3>
+                    <p>Items Recycled</p>
+                </div>
+                <div class="impact-item">
+                    <i class="fas fa-tree floating"></i>
+                    <h3>5,000+</h3>
+                    <p>Trees Saved</p>
+                </div>
+                <div class="impact-item">
+                    <i class="fas fa-water floating"></i>
+                    <h3>100,000L</h3>
+                    <p>Water Saved</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Reward Claim Modal -->
+    <div class="modal" id="rewardClaimModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Claim Your Reward</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="reward-details">
+                    <div class="reward-icon large"></div>
+                    <h3 class="reward-title"></h3>
+                    <p class="reward-description"></p>
+                </div>
+                <form class="claim-form">
+                    <div class="form-group">
+                        <label for="claimAddress">Delivery Address</label>
+                        <textarea id="claimAddress" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="claimPhone">Contact Number</label>
+                        <input type="tel" id="claimPhone" required>
+                    </div>
+                    <button type="submit" class="claim-submit-btn">Confirm Claim</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/rewards.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true
+        });
+
+        // Progress bar animation
+        const progressFill = document.querySelector('.progress-fill');
+        if (progressFill) {
+            progressFill.style.setProperty('--progress-width', progressFill.style.width);
+        }
+
+        // Counting Animation Function
+        function animateCounter(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const currentValue = Math.floor(progress * (end - start) + start);
+                
+                // Format number with commas if it's over 1000
+                element.textContent = currentValue >= 1000 ? 
+                    currentValue.toLocaleString() : currentValue;
+
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Animate all stat values on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animate points
+            const pointsElement = document.querySelector('.points');
+            animateCounter(pointsElement, 0, 1250, 2000);
+
+            // Animate stat values
+            const statValues = document.querySelectorAll('.stat-value');
+            const targetValues = [125, 12, 5]; // Values from your HTML
+
+            statValues.forEach((element, index) => {
+                animateCounter(element, 0, targetValues[index], 2000);
+            });
+        });
+
+        // Create observer for stats animation when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statValues = entry.target.querySelectorAll('.stat-value');
+                    const targetValues = [125, 12, 5];
+
+                    statValues.forEach((element, index) => {
+                        animateCounter(element, 0, targetValues[index], 2000);
+                    });
+                    
+                    // Only animate once
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Observe the stats container
+        const statsContainer = document.querySelector('.progress-stats');
+        if (statsContainer) {
+            observer.observe(statsContainer);
+        }
+
+        // Navbar Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            }
+
+            // Navbar Scroll Effect
+            window.addEventListener('scroll', () => {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Brand Cards Progress Animation
+            const brandCards = document.querySelectorAll('.brand-card');
+            
+            const animateBrandProgress = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const progressFill = entry.target.querySelector('.progress-fill');
+                        const width = progressFill.style.width;
+                        progressFill.style.setProperty('--progress-width', width);
+                        progressFill.style.width = '0';
+                        
+                        // Trigger reflow
+                        void progressFill.offsetWidth;
+                        
+                        // Add animation class
+                        progressFill.style.width = width;
+                        
+                        // Unobserve after animation
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const brandObserver = new IntersectionObserver(animateBrandProgress, {
+                threshold: 0.2
+            });
+
+            brandCards.forEach(card => brandObserver.observe(card));
+
+            // Handle claim button clicks
+            const claimButtons = document.querySelectorAll('.brand-card .brand-btn');
+            claimButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    if (!this.disabled) {
+                        const userData = localStorage.getItem('userData');
+                        const brandCard = this.closest('.brand-card');
+                        const rewardTitle = brandCard.querySelector('h3').textContent;
+                        const pointsRequired = brandCard.querySelector('.points-required').textContent.split('/')[1].trim();
+                        
+                        if (userData) {
+                            // User is logged in, show claim modal
+                            const modal = document.getElementById('rewardClaimModal');
+                            const modalTitle = modal.querySelector('.reward-title');
+                            const modalDesc = modal.querySelector('.reward-description');
+                            
+                            modalTitle.textContent = rewardTitle;
+                            modalDesc.textContent = `Claim your ${rewardTitle} reward (${pointsRequired} points)`;
+                            
+                            modal.style.display = 'flex';
+                        } else {
+                            // Store reward info and show login modal
+                            localStorage.setItem('pendingReward', JSON.stringify({
+                                title: rewardTitle,
+                                points: pointsRequired
+                            }));
+                            
+                            const authModal = document.getElementById('authModal');
+                            if (authModal) {
+                                authModal.style.display = 'flex';
+                            }
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="js/translations.js"></script>
+</body>
+</html> 

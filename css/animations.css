@@ -1,0 +1,606 @@
+/* Basic Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideFromRight {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Animation Classes */
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-in forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+.animate-slide-down {
+    animation: slideDown 0.5s ease-out forwards;
+}
+
+.animate-slide-right {
+    animation: slideFromRight 0.5s ease-out forwards;
+}
+
+.animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-rotate {
+    animation: rotate 2s linear infinite;
+}
+
+/* Hero Section Animations */
+.hero-content h1 {
+    opacity: 0;
+    animation: slideDown 0.8s ease-out forwards;
+}
+
+.hero-content p {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.3s forwards;
+}
+
+.hero-content .cta-button {
+    opacity: 0;
+    animation: slideUp 0.8s ease-out 0.6s forwards;
+}
+
+/* Reward Card Animations */
+.reward-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reward-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.reward-card i {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Badge Animations */
+.badge {
+    transition: transform 0.3s ease;
+}
+
+.badge:hover {
+    transform: scale(1.1);
+}
+
+.badge i {
+    animation: rotate 10s linear infinite;
+}
+
+/* Notification Animations */
+.notification {
+    animation: slideFromRight 0.5s ease-out forwards;
+}
+
+.notification.hide {
+    animation: slideFromRight 0.5s ease-out reverse forwards;
+}
+
+/* Button Animations */
+.cta-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255,255,255,0.2), 
+        transparent);
+    animation: shimmer 2s infinite linear;
+}
+
+/* Modal Animations */
+.modal {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Stats Card Animations */
+.stat-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.stat-card i {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Loading Animation */
+.loading {
+    animation: rotate 1s linear infinite;
+}
+
+/* Progress Bar Animation */
+.progress-bar .progress {
+    transition: width 0.3s ease-out;
+}
+
+/* Leaderboard Entry Animations */
+.leaderboard-entries .entry {
+    opacity: 0;
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+.leaderboard-entries .entry:nth-child(1) { animation-delay: 0.1s; }
+.leaderboard-entries .entry:nth-child(2) { animation-delay: 0.2s; }
+.leaderboard-entries .entry:nth-child(3) { animation-delay: 0.3s; }
+.leaderboard-entries .entry:nth-child(4) { animation-delay: 0.4s; }
+.leaderboard-entries .entry:nth-child(5) { animation-delay: 0.5s; }
+
+/* Language Switcher Animation */
+.language-dropdown {
+    transform-origin: top;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Form Input Animations */
+.form-group input:focus {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+/* Error Shake Animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.error-shake {
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Success Animation */
+@keyframes checkmark {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.success-checkmark {
+    animation: checkmark 0.5s ease-out forwards;
+}
+
+/* Responsive Animations */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Leaderboard Animations */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.7); }
+    100% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes sparkle {
+    0% { transform: scale(0.5) rotate(0deg); opacity: 0; }
+    50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+    100% { transform: scale(0.5) rotate(360deg); opacity: 0; }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* First Place Styles */
+.leaderboard-item[data-rank="1"] {
+    background: linear-gradient(135deg, #ffd700 0%, #fff5d7 50%, #ffd700 100%);
+    position: relative;
+    border-radius: 8px;
+    animation: glow 2s infinite;
+    transform: scale(1.05);
+    z-index: 3;
+}
+
+/* Second Place Styles */
+.leaderboard-item[data-rank="2"] {
+    background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 50%, #c0c0c0 100%);
+    position: relative;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+/* Third Place Styles */
+.leaderboard-item[data-rank="3"] {
+    background: linear-gradient(135deg, #cd7f32 0%, #ffdab3 50%, #cd7f32 100%);
+    position: relative;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+/* Crown Animation */
+.crown {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    animation: float 2s ease-in-out infinite;
+    z-index: 10;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Medal Animations */
+.medal {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+}
+
+.medal-gold {
+    color: #ffd700;
+    animation: float 2s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.medal-silver {
+    color: #c0c0c0;
+    animation: float 2.2s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(192, 192, 192, 0.5);
+}
+
+.medal-bronze {
+    color: #cd7f32;
+    animation: float 2.4s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(205, 127, 50, 0.5);
+}
+
+/* Sparkle Effect */
+.sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    animation: sparkle 1.5s ease-in-out infinite;
+    box-shadow: 0 0 5px white;
+    pointer-events: none;
+}
+
+/* Hover Effects */
+.leaderboard-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.leaderboard-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.leaderboard-item[data-rank="1"]:hover {
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+}
+
+/* Avatar Animation */
+.leaderboard-avatar {
+    transition: transform 0.3s ease;
+}
+
+.leaderboard-item[data-rank="1"] .leaderboard-avatar {
+    animation: rotate 8s linear infinite;
+}
+
+/* New Leaderboard Effects */
+@keyframes confetti {
+    0% { transform: translateY(0) rotateZ(0deg); opacity: 1; }
+    100% { transform: translateY(100px) rotateZ(720deg); opacity: 0; }
+}
+
+@keyframes rainbow-aura {
+    0% { filter: hue-rotate(0deg) brightness(1.2); }
+    100% { filter: hue-rotate(360deg) brightness(1.2); }
+}
+
+@keyframes star-burst {
+    0% { transform: scale(0) rotate(0deg); opacity: 1; }
+    100% { transform: scale(1.5) rotate(180deg); opacity: 0; }
+}
+
+@keyframes floating-stars {
+    0% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
+    50% { transform: translateY(-15px) rotate(180deg); opacity: 1; }
+    100% { transform: translateY(0px) rotate(360deg); opacity: 0.8; }
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ffff00, #ff00ff);
+    animation: confetti 2s ease-out infinite;
+}
+
+.leaderboard-item[data-rank="1"] {
+    position: relative;
+    overflow: visible !important;
+}
+
+.leaderboard-item[data-rank="1"]::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    z-index: -1;
+    animation: rainbow-aura 2s linear infinite;
+    border-radius: inherit;
+    filter: blur(8px);
+}
+
+.star {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #fff 0%, transparent 70%);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: floating-stars 3s ease-in-out infinite;
+}
+
+.star-burst {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #ffd700 0%, transparent 70%);
+    animation: star-burst 1.5s ease-out infinite;
+}
+
+/* Add multiple confetti pieces with different delays and positions */
+.leaderboard-item[data-rank="1"]::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+/* Enhance existing effects */
+.leaderboard-item[data-rank="1"] .medal {
+    animation: pulse 1s ease-in-out infinite, rainbow-aura 3s linear infinite;
+}
+
+.leaderboard-item[data-rank="2"] .medal {
+    animation: pulse 1.2s ease-in-out infinite;
+}
+
+.leaderboard-item[data-rank="3"] .medal {
+    animation: pulse 1.4s ease-in-out infinite;
+}
+
+/* Add 3D effect to top performers */
+.top-performer {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.top-performer:hover {
+    transform: scale(1.1) rotateY(10deg);
+}
+
+/* Add shimmering effect to the crown */
+.crown {
+    background: linear-gradient(90deg, #ffd700, #fff5d7, #ffd700);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: float 2s ease-in-out infinite, shimmer 2s linear infinite;
+}
+
+/* Leaderboard Special Effects */
+@keyframes firework-animation {
+    0% { transform: translate(0, 0) scale(0.1); opacity: 1; }
+    50% { opacity: 1; }
+    100% { transform: translate(var(--x), var(--y)) scale(1); opacity: 0; }
+}
+
+@keyframes sparkle-animation {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes float-animation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes rotate-animation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.leaderboard-item[data-rank="1"] {
+    background: linear-gradient(135deg, #ffd700 0%, #fff5d7 50%, #ffd700 100%);
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    animation: glow 2s infinite;
+}
+
+.firework-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ff6b6b, #ffd93d);
+    --x: random(100);
+    --y: random(100);
+    animation: firework-animation 1s ease-out infinite;
+}
+
+.sparkle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #ffffff;
+    border-radius: 50%;
+    animation: sparkle-animation 1.5s ease-in-out infinite;
+    box-shadow: 0 0 10px #ffffff;
+}
+
+.floating-element {
+    position: absolute;
+    animation: float-animation 3s ease-in-out infinite;
+}
+
+.rotating-element {
+    position: absolute;
+    animation: rotate-animation 4s linear infinite;
+}
+
+/* Enhanced medal effects */
+.medal-gold {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    animation: float-animation 2s ease-in-out infinite;
+}
+
+.medal-silver {
+    color: #c0c0c0;
+    text-shadow: 0 0 10px rgba(192, 192, 192, 0.5);
+    animation: float-animation 2s ease-in-out infinite;
+}
+
+.medal-bronze {
+    color: #cd7f32;
+    text-shadow: 0 0 10px rgba(205, 127, 50, 0.5);
+    animation: float-animation 2s ease-in-out infinite;
+}
+
+/* Crown enhancement */
+.crown {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    animation: float-animation 2s ease-in-out infinite;
+    z-index: 10;
+    text-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.8),
+        0 0 20px rgba(255, 215, 0, 0.5),
+        0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+/* Hover effects */
+.leaderboard-item[data-rank="1"]:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
+    transition: all 0.3s ease;
+}
+
+/* Star effects */
+.star {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #ffd700;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: sparkle-animation 2s ease-in-out infinite;
+}
+
+/* Add rainbow border effect */
+.rainbow-border {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        #ff0000, #ff7300, #fffb00, #48ff00, 
+        #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    border-radius: 12px;
+    z-index: -1;
+    animation: rotate-animation 3s linear infinite;
+    opacity: 0.7;
+}

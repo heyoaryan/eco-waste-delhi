@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Coming Soon - Zero Waste Delhi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .coming-soon-container {
+            min-height: 100vh;
+            display: flex;
+            background: linear-gradient(135deg, #4CAF50, #2196F3);
+            color: white;
+            padding: 2rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .coming-soon-content {
+            flex: 1;
+            max-width: 600px;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-section {
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-section i {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .logo-section h2 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .coming-soon-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease-out;
+            line-height: 1.2;
+        }
+
+        .coming-soon-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .app-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .feature i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .phone-mockup {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40%;
+            max-width: 400px;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .phone-frame {
+            background: white;
+            border-radius: 40px;
+            padding: 15px;
+            box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .phone-screen {
+            background: #1a1a1a;
+            border-radius: 25px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 9/19;
+        }
+
+        .phone-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #2ecc71, #3498db);
+            opacity: 0.9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .phone-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="rgba(255,255,255,0.1)" x="0" y="0" width="50" height="50" /><rect fill="rgba(255,255,255,0.1)" x="50" y="50" width="50" height="50" /></svg>');
+            background-size: 20px 20px;
+            opacity: 0.3;
+        }
+
+        .phone-content h3 {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .phone-content p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .launch-countdown {
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .countdown-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+        }
+
+        .notify-form {
+            margin-top: 3rem;
+            animation: fadeIn 1s ease-out 0.9s both;
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+        }
+
+        .notify-input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .notify-button {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            background: #FF4081;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .notify-button:hover {
+            background: #f50057;
+            transform: translateY(-2px);
+        }
+
+        .back-home {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
+            z-index: 3;
+        }
+
+        .back-home:hover {
+            transform: translateX(-5px);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(-50%) translateX(0);
+            }
+            50% {
+                transform: translateY(-50%) translateX(-20px);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .phone-mockup {
+                width: 35%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .coming-soon-container {
+                flex-direction: column;
+                padding: 1rem;
+                text-align: center;
+                min-height: 100dvh;
+            }
+            
+            .coming-soon-content {
+                padding: 1rem;
+                max-width: 100%;
+                order: 2;
+            }
+
+            .logo-section {
+                justify-content: center;
+                margin-bottom: 2rem;
+            }
+
+            .coming-soon-title {
+                font-size: 2.5rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .coming-soon-subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+            }
+
+            .phone-mockup {
+                position: relative;
+                width: 70%;
+                max-width: 280px;
+                margin: 1rem auto;
+                transform: none;
+                right: auto;
+                top: auto;
+                order: 1;
+                animation: floatMobile 4s ease-in-out infinite;
+            }
+
+            @keyframes floatMobile {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-10px); }
+            }
+
+            .app-features {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                margin: 2rem 0;
+            }
+
+            .feature {
+                padding: 1.5rem;
+            }
+
+            .feature i {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .feature h3 {
+                font-size: 1.3rem;
+            }
+
+            .feature p {
+                font-size: 0.95rem;
+            }
+
+            .notify-form {
+                flex-direction: column;
+                gap: 0.8rem;
+                margin-top: 2rem;
+                padding: 0 1rem;
+            }
+
+            .notify-input,
+            .notify-button {
+                width: 100%;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .store-links {
+                margin: 2rem 0;
+                padding: 0 1rem;
+            }
+
+            .store-links h3 {
+                font-size: 1.8rem;
+            }
+
+            .store-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .store-button {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .back-home {
+                top: 1rem;
+                left: 1rem;
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50px;
+                backdrop-filter: blur(10px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .coming-soon-title {
+                font-size: 2rem;
+            }
+
+            .coming-soon-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .phone-mockup {
+                width: 85%;
+            }
+
+            .feature {
+                padding: 1.2rem;
+            }
+
+            .feature i {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .store-button {
+                padding: 0.7rem 1.2rem;
+            }
+
+            .store-icon {
+                font-size: 2rem;
+            }
+
+            .store-name {
+                font-size: 1.1rem;
+            }
+        }
+
+        @supports (padding: max(0px)) {
+            .coming-soon-container {
+                padding-left: max(1rem, env(safe-area-inset-left));
+                padding-right: max(1rem, env(safe-area-inset-right));
+                padding-top: max(1rem, env(safe-area-inset-top));
+                padding-bottom: max(1rem, env(safe-area-inset-bottom));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="coming-soon-container">
+        <a href="index.html" class="back-home">
+            <i class="fas fa-arrow-left"></i>
+            Back to Home
+        </a>
+
+        <div class="coming-soon-content">
+            <div class="logo-section">
+                <i class="fas fa-leaf"></i>
+                <h2>Zero Waste Delhi</h2>
+            </div>
+
+            <h1 class="coming-soon-title">Your Green Journey Starts Here</h1>
+            <p class="coming-soon-subtitle">Join thousands of eco-warriors making Delhi cleaner and greener.</p>
+
+            <div class="app-features">
+                <div class="feature">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Find Collection Centre</h3>
+                    <p>Locate your nearest waste collection centers with real-time availability status</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-qrcode"></i>
+                    <h3>Quick Scan</h3>
+                    <p>Scan waste items to instantly know their proper disposal methods and recycling options</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Track Progress</h3>
+                    <p>Monitor your waste reduction journey and see your environmental impact grow</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-bell"></i>
+                    <h3>Instant Notification</h3>
+                    <p>Get real-time updates about collection schedules and eco-friendly initiatives near you</p>
+                </div>
+            </div>
+
+            <div class="store-links">
+                <h3>Download Our App</h3>
+                <p>Get ready to start your eco-friendly journey</p>
+                <div class="store-buttons">
+                    <a href="#" class="store-button google-play">
+                        <div class="store-icon">
+                            <i class="fab fa-google-play"></i>
+                        </div>
+                        <div class="store-info">
+                            <span class="store-text">GET IT ON</span>
+                            <span class="store-name">Google Play</span>
+                        </div>
+                    </a>
+                    <a href="#" class="store-button apple-store">
+                        <div class="store-icon">
+                            <i class="fab fa-apple"></i>
+                        </div>
+                        <div class="store-info">
+                            <span class="store-text">Download on the</span>
+                            <span class="store-name">App Store</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="notify-form">
+                <input type="email" class="notify-input" placeholder="Enter your email for early access">
+                <button class="notify-button">Get Early Access</button>
+            </div>
+        </div>
+
+        <div class="phone-mockup">
+            <div class="phone-frame">
+                <div class="phone-screen">
+                    <div class="phone-content">
+                        <i class="fas fa-mobile-alt" style="font-size: 3rem; color: white; margin-bottom: 1.5rem;"></i>
+                        <h3>App Coming Soon</h3>
+                        <p>We're working on something amazing!</p>
+                        <div class="launch-countdown">
+                            <span class="countdown-number">30</span>
+                            <span class="countdown-label">Days until launch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.notify-button').addEventListener('click', function() {
+            const email = document.querySelector('.notify-input').value;
+            if (email) {
+                alert('Thank you! You\'ll be among the first to know when we launch.');
+                document.querySelector('.notify-input').value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+    </script>
+</body>
+</html> 

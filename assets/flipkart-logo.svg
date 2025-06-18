@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .text { font-family: Arial, sans-serif; font-weight: bold; }
+    </style>
+    <rect width="200" height="60" fill="#FFF"/>
+    <text x="50%" y="50%" text-anchor="middle" dy=".3em" class="text" fill="#2874F0" font-size="36">Flipkart</text>
+</svg> 
