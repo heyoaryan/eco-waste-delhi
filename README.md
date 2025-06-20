@@ -1,3 +1,73 @@
+# ♻️ Zero Waste Delhi
+
+**Zero Waste Delhi** is a smart waste management initiative designed to promote eco-friendly waste disposal, community participation, and gamified rewards in the capital city. It combines IoT-enabled Smart Bins with a web and mobile platform that tracks individual contributions, promotes awareness, and rewards responsible waste behavior.
+
+## 🚀 Project Objective
+
+To create a tech-driven, eco-conscious solution for urban waste management by:
+
+- Encouraging responsible waste disposal behavior
+- Enabling real-time tracking through IoT Smart Bins
+- Using gamification to motivate and reward citizens
+- Reducing overall landfill waste and improving recycling rates
+
+---
+
+## 🧠 Problem Statement
+
+Delhi generates over 10,000 tons of waste daily. Most of it ends up in landfills due to poor segregation, lack of awareness, and inefficient tracking. There's a need for a **smart, trackable, and rewarding** waste management system that involves citizens actively.
+
+---
+
+## 🌟 Key Features
+
+- 🗑️ **Smart Bin**: Equipped with a weight sensor to measure and record waste deposited.
+- 📲 **User Dashboard**: Track your contributions, view stats, and check your impact.
+- 🏆 **Leaderboard System**: Weekly rewards for top contributors.
+- 🔔 **Notifications**: Alerts for bin status and reward updates.
+- 🌐 **Gamified Web Portal**: User registration, profile, and performance stats.
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend:
+- React.js
+- Tailwind CSS
+- Framer Motion (Animations)
+
+### Backend:
+- Node.js
+- Express.js
+- MongoDB (Database)
+- Firebase Auth / JWT for Login/Signup
+
+### IoT Hardware:
+- Arduino / NodeMCU
+- Load Cell + HX711 (Weight Sensor)
+- WiFi Module for sending data to server
+
+---
+
+## 🖥️ Website Features
+
+- Home Page with project info and stats
+- Login / Signup using Firebase or MongoDB
+- User Dashboard with real-time waste data
+- Weekly Leaderboard and Rewards
+- Admin Panel to monitor bin status and user contributions
+
+---
+
+## 📦 How to Run Locally
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/<your-username>/zero-waste-delhi.git
+   cd zero-waste-delhi
+
+
+
 # Zero Waste Delhi - Social Authentication Setup
 
 This guide will help you set up social authentication (Google and Apple Sign-In) for the Zero Waste Delhi application.
